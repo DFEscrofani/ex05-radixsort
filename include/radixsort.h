@@ -3,25 +3,27 @@
 
 namespace edu { namespace vcccd { namespace vc { namespace csv15 {
 
-    int getMax (size_t array[], size_t n){
-        int max = array[0];
-        for(int i = 1; i < n; i++){
-            if (array[i] > max)
-                max = array[i];
-        }
-    }
+    template<typename T>
+    void radixsort(T array[], size_t arraySize) {
 
-    template<class T>
-    void radixsort(T array[], size_t size) {
-        maxLength(array, arraySize) {
-            maxDigits = 0;
-            for (i = 0; i < arraySize; i++) {
-                digitCount = RadixGetLength(array[i]);
-                if (digitCount > maxDigits) {
-                    maxDigits = digitCount;
-                }
-            }
-            return maxDigits;
+        size_t max = 0;
+        size_t maxDigits = 0;
+
+        for(size_t i = 1; i < arraySize; i++){
+            if (array[i] > max)
+                max = array[i];             //Find max value in the array
         }
+        while (max != 0){
+            maxDigits++;         //Find number of digits for max value
+            max = max/10;
+        }
+
+        /**for(size_t i = 0; i < maxDigits; i++){
+            for(){}
+
+            if (maxDigits )
+        }*/
+
+
     }
 }}}}
